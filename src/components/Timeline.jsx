@@ -1,25 +1,12 @@
-// src/components/Timeline.js
-import React, { useState } from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import { School, Work } from "@material-ui/icons";
+import React, { useState } from 'react';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import SchoolIcon from '@mui/icons-material/School';
+import WorkIcon from '@mui/icons-material/Work';
 
 const events = [
-  {
-    date: "July 4, 1776",
-    title: "Declaration of Independence",
-    description: "The United States declared independence from Britain.",
-    icon: <School />,
-  },
-  {
-    date: "July 20, 1969",
-    title: "Moon Landing",
-    description: "Apollo 11 landed on the moon.",
-    icon: <Work />,
-  },
+  { date: 'July 4, 1776', title: 'Declaration of Independence', description: 'The United States declared independence from Britain.', icon: <SchoolIcon /> },
+  { date: 'July 20, 1969', title: 'Moon Landing', description: 'Apollo 11 landed on the moon.', icon: <WorkIcon /> },
   // Add more events here
 ];
 
@@ -27,7 +14,7 @@ const Timeline = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: 'flex' }}>
       <VerticalTimeline>
         {events.map((event, index) => (
           <VerticalTimelineElement
@@ -41,14 +28,7 @@ const Timeline = () => {
         ))}
       </VerticalTimeline>
       {selectedEvent && (
-        <div
-          style={{
-            marginLeft: "20px",
-            padding: "10px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-          }}
-        >
+        <div style={{ marginLeft: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}>
           <h3>{selectedEvent.title}</h3>
           <p>{selectedEvent.date}</p>
           <p>{selectedEvent.description}</p>
